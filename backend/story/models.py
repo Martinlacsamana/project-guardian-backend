@@ -6,6 +6,7 @@ class Story(models.Model):
     text: models.TextField()
     location: models.CharField(max_length=30)
     image: models.CharField(max_length=60)
+    user_id: models.CharField(max_length=30, unique=True)
 
 # Our constructor whenever we want to print this object
 def __str__(self):

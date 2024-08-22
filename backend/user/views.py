@@ -8,8 +8,6 @@ import json
 class User(View):
     @csrf_exempt  # Disable CSRF protection for this view
     def post(self, request):
-     
-        print('POST REQUEST HIT')
         try:
             user_data = json.loads(request.body)
             user_id = user_data.get('user_id')

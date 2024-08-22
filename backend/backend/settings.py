@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'user',    # Added our controllers here
-    'journal'
+    'story'
 ]
 
 MIDDLEWARE = [
