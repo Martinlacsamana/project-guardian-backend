@@ -4,7 +4,8 @@ from django.db import models
 class User(models.Model):
     user_id: models.CharField(max_length=30, unique=True)
     phone_number: models.CharField(max_length=10)
+    name: models.CharField(max_length=60)
 
 def __str__(self):
-    return self.user_id
+    return f"User is {self.name}"
 
