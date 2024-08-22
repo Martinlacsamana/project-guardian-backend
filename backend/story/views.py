@@ -12,6 +12,7 @@ class Story(View):
     # Method for adding a new Story to the database
     def post(self, request):
         try:
+            print("Add a story endpoint hit")
             req = json.loads(request.body)
             
             # Unpack relev fields directly into db
@@ -23,7 +24,7 @@ class Story(View):
                 'user_id': req.get('user_id')
             })
 
-            return JsonResponse({'status': 'User added successfully'}, status=201)
+            return JsonResponse({'status': 'Story added successfully'}, status=201)
 
         except Exception as e:
             return JsonResponse({'status': 'error', 'message': str(e)}, status=400)

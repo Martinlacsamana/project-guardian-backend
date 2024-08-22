@@ -25,10 +25,17 @@ SECRET_KEY = "django-insecure--$ow)_gx-gat3ab36l0mg356wc_&)sph6bv-$kpiwicev_vttt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+# Specifies which host/domain names my Django application can serve. 
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'right-cricket-illegally.ngrok-free.app',  # My Ngrok Edge
+]
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
 ]
 
 
@@ -41,11 +48,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'corsheaders',
     'user',    # Added our controllers here
     'story'
 ]
 
 MIDDLEWARE = [
+     "corsheaders.middleware.CorsMiddleware",  
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
